@@ -1,7 +1,9 @@
 .landingpage {
   height: 100vh;
   display: flex;
+  flex-direction: column;
   width: 100vw;
+  align-items: center;
 }
 
 .board {
@@ -19,6 +21,13 @@
   background-color: yellow;
   height: 100px;
   width: 100px;
+}
+
+.tile Button {
+  color: black;
+  background-color: yellow;
+  height: 100%;
+  width: 100%;
 }
 
 p {

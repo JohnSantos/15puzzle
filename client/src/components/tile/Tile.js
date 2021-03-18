@@ -1,7 +1,11 @@
+import { Button } from "@material-ui/core";
+
 const Tile = (props) => {
   return (
     <div className={`tile ${props.class && "empty"}`}>
-      <p>{props.val}</p>
+      <Button color="secondary" onClick={() => props.tryToMove(props.val)}>
+        {props.val}
+      </Button>
     </div>
   );
 };

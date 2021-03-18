@@ -3,8 +3,6 @@ const RecordsModel = require("../models/records");
 exports.createRecord = async (req, res) => {
   const { name, time, moves } = req.body;
 
-  console.log(name, time, moves);
-
   try {
     const newRecord = new RecordsModel({
       name,
@@ -15,7 +13,6 @@ exports.createRecord = async (req, res) => {
     console.log(newRecord);
 
     await newRecord.save();
-    console.log("after save");
 
     return res.status(200).json({
       newRecord,

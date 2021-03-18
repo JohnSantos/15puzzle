@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 const recordsRouter = require("./routes/records");
 const gameRouter = require("./routes/game");
 const logger = require("morgan");
-
+const cors = require("cors");
 const app = express();
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -19,7 +19,7 @@ const mongoDB = process.env.MONGO_CONNECTION_STRING;
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
-
+app.use(cors());
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
