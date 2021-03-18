@@ -33,7 +33,6 @@ const LandingPage = () => {
     const endpoint = `${process.env.REACT_APP_API_HOST}:${process.env.REACT_APP_API_PORT}/api/game`;
     const res = await axios.get(endpoint);
     if (res && res.status === 200) {
-      console.log("res", res.data.data);
       setPlaying(true);
       setInitialConfiguration(res.data.data);
       setStartTime(Date.now());
