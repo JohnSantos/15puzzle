@@ -14,7 +14,7 @@ const Board = (props) => {
       }
     };
     checkWin();
-  }, [moves, board, props]);
+  }, [moves]);
 
   const tryToMoveTile = (index) => {
     if (props.playing && canMoveTile(index)) {
