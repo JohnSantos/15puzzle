@@ -3,7 +3,11 @@ import Tile from "../tile";
 const Board = (props) => {
   const renderBoard = () => {
     return props.initialConfiguration.map((val) => {
-      return <Tile val={val} />;
+      return val === 0 ? (
+        <Tile val={val} class={"empty"} />
+      ) : (
+        <Tile val={val} />
+      );
     });
   };
 

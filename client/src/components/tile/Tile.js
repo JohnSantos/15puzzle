@@ -1,6 +1,6 @@
 const Tile = (props) => {
   return (
-    <div className="tile">
+    <div className={`tile ${props.class && "empty"}`}>
       <p>{props.val}</p>
     </div>
   );
